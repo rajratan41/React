@@ -23,7 +23,15 @@
     <!-- Writing React to inject data to the DOM and Render it to display on Browser  -->
 
     <script>
-      const heading = React.createElement("h1", {}, "Namaste Everyone!");
+      const heading = React.createElement(
+        "h1",
+        {
+          id: "title",
+          className: "class",
+          style: { color: "red" },
+        },
+        "Namaste Everyone!"
+      );
 
       const root = ReactDOM.createRoot(document.getElementById("root"));
 

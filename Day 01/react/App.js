@@ -3,7 +3,7 @@ const heading1 = React.createElement(
   {
     id: "title",
     className: "class",
-    style: { color: "red" },
+    style: { color: "white" },
   },
   "Heading 1"
 );
@@ -13,7 +13,7 @@ const heading2 = React.createElement(
   {
     id: "title",
     className: "class",
-    style: { color: "red" },
+    style: { color: "white" },
   },
   "Heading 2"
 );
@@ -23,7 +23,7 @@ const heading3 = React.createElement(
   {
     id: "title",
     className: "class",
-    style: { color: "red" },
+    style: { color: "white" },
   },
   "Heading 3"
 );

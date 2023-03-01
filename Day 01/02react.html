@@ -8,29 +8,29 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- React CDN -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- React CDN -->
+
+    <!-- Writing React to inject data to the DOM and Render it to display on Browser  -->
+
+    <script>
+      const heading = React.createElement("h1", {}, "Namaste Everyone!");
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      // Passing a react element inside root element
+      root.render(heading);
+    </script>
+
+    <!-- Writing React to inject data to the DOM and Render it to display on Browser  -->
   </body>
-
-  <!-- React CDN -->
-  <script
-    crossorigin
-    src="https://unpkg.com/react@18/umd/react.development.js"
-  ></script>
-  <script
-    crossorigin
-    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-  ></script>
-  <!-- React CDN -->
-
-  <!-- Writing React to inject data to the DOM and Render it to display on Browser  -->
-
-  <script>
-    const heading = React.createElement("h1", {}, "Namaste Everyone!");
-
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-
-    // Passing a react element inside root element
-    root.render(heading);
-  </script>
-
-  <!-- Writing React to inject data to the DOM and Render it to display on Browser  -->
 </html>

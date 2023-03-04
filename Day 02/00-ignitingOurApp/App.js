@@ -1,3 +1,26 @@
+/**
+ * Q. What Parcel will do
+ * 
+ * Created a Server
+ * HMR- Hot module replacement
+ * File Watcher Algorithm - written in c++
+ * BUNDLING
+ * MINIFY
+ * Cleaning our Code
+ * Development and Production Build
+ * Super Fast build Algorithm
+ * Image Optimization
+ * Caching while Developement
+ * Compression
+ * Compatible with older version of browser
+ * HTTPS on Development (-- https)
+ * Port number
+ * Consistent Hasing Algorithm
+ * Zero Configration
+ * 
+ */
+
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 

@@ -34,14 +34,26 @@ const Heading2 = () => (
 // Functional Component
 let abc = "JavaScript";
 
+/**
+ * Use of component inside a component, we call it as Component Composition
+ */
+
+/**
+ *  React Funtional component: A functional component is a simple JavaScript
+ *  function that returns JSX/React.createElement(). This is a FUNCTION
+ * */
+
 // {we can write any piece of javaScript code inside this}
 
 const HeaderComponent = () => {
   return (
     <div>
+      {/* This is how we can add elements into another component */}
       {heading}
-      <Heading2 />
       {abc}
+      {/* This is how we can add functional component inside another */}
+      <Heading2 />
+      {Heading2()}
       <h1 className="heading">Hello I'm Functional Component</h1>
       <p>I'm Paragraph</p>
     </div>
@@ -49,4 +61,6 @@ const HeaderComponent = () => {
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeaderComponent />);
+
+// root.render(heading); -> For React element
+root.render(<HeaderComponent />); // -> For React Functional Component

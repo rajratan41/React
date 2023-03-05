@@ -3,17 +3,17 @@ import ReactDOM from "react-dom/client";
 
 const heading1 = React.createElement(
   "h1",
-  { className: "h1" },
+  { className: "title", key: "h1" },
   "Hello I'm Heading 1"
 );
 const heading2 = React.createElement(
   "h2",
-  { className: "h2" },
+  { className: "title", key: "h2" },
   "Hello I'm Heading 2"
 );
 const heading3 = React.createElement(
   "h3",
-  { className: "h3" },
+  { className: "h3", key: "h3" },
   "Hello I'm Heading 3"
 );
 

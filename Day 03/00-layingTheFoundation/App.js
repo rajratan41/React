@@ -10,11 +10,14 @@ import ReactDOM from "react-dom/client";
  * JSX is HTML like Syntax but it is not HTML inside JavaScript
  */
 
-const heading1 = (
+// react element
+const heading = (
   <h1 className="heading" key="h1">
     Hello I'm JSX
   </h1>
 );
 
+// react component
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading1);
+root.render(heading);

@@ -31,9 +31,6 @@ const Heading2 = () => (
  *
  */
 
-// Functional Component
-let abc = "JavaScript";
-
 /**
  * Use of component inside a component, we call it as Component Composition
  */
@@ -45,6 +42,9 @@ let abc = "JavaScript";
 
 // {we can write any piece of javaScript code inside this}
 
+let abc = "JavaScript";
+
+// Functional Component
 const HeaderComponent = () => {
   return (
     <div>

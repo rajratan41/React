@@ -13,11 +13,38 @@ import ReactDOM from "react-dom/client";
 // react element
 const heading = (
   <h1 className="heading" key="h1">
-    Hello I'm JSX
+    Hello I'm React element
   </h1>
 );
 
-// react component
+const Heading2 = () => (
+  <h2 className="heading" key="h2">
+    Hello I'm Functional Component - Imported in HeaderComponent
+  </h2>
+);
+
+/***
+ * React Components
+ *
+ * Functional Component - NEW way of writing Code
+ * Class based Component - OLD way of writing Code
+ *
+ */
+
+// Functional Component
+let abc = "JavaScript";
+
+const HeaderComponent = () => {
+  return (
+    <div>
+      {heading}
+      <Heading2 />
+      {abc}
+      <h1 className="heading" >Hello I'm Functional Component</h1>
+      <p>I'm Paragraph</p>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<HeaderComponent />);

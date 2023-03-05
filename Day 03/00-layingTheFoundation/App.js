@@ -34,13 +34,15 @@ const Heading2 = () => (
 // Functional Component
 let abc = "JavaScript";
 
+// {we can write any piece of javaScript code inside this}
+
 const HeaderComponent = () => {
   return (
     <div>
       {heading}
       <Heading2 />
       {abc}
-      <h1 className="heading" >Hello I'm Functional Component</h1>
+      <h1 className="heading">Hello I'm Functional Component</h1>
       <p>I'm Paragraph</p>
     </div>
   );

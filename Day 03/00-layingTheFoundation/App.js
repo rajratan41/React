@@ -1,30 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading1 = React.createElement(
-  "h1",
-  { className: "title", key: "h1" },
-  "Hello I'm Heading 1"
-);
-const heading2 = React.createElement(
-  "h2",
-  { className: "title", key: "h2" },
-  "Hello I'm Heading 2"
-);
-const heading3 = React.createElement(
-  "h3",
-  { className: "h3", key: "h3" },
-  "Hello I'm Heading 3"
-);
+// React.createElement => gives Object => it converts into HTML (DOM)
 
-const container = React.createElement(
-  "div",
-  {
-    className: "container",
-    style: { backgroundColor: "red", color: "white", textAlign: "center" },
-  },
-  [heading1, heading2, heading3]
+/**
+ * JSX -
+ *
+ * Fancy way of writing HTML inside JavaScript
+ * JSX is HTML like Syntax but it is not HTML inside JavaScript
+ */
+
+const heading1 = (
+  <h1 className="heading" key="h1">
+    Hello I'm JSX
+  </h1>
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(container);
+root.render(heading1);

@@ -61,6 +61,7 @@ const HeaderComponent = () => {
 const Body = () => {};
 
 // React Fragment - <React.Fragment> <React.Fragment/>  or <>we can use empty tag</>
+// JSX - have only one parent that's why we use React Fragment or div or empty tag
 
 const AppLayout = () => {
   return (

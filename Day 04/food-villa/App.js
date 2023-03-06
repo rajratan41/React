@@ -1974,7 +1974,7 @@ const ResturantCard = ({
       />
       <h2>{name}</h2>
       <h5>{cuisines.join(", ")}</h5>
-      <h3>{totalRatingsString} Stars</h3>
+      <h3>{totalRatingsString}</h3>
     </div>
   );
 };

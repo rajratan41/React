@@ -23,6 +23,7 @@ const Jsx2 = () => {
 /**
  * Other styling are Through
  *
+ * In our CSS file
  * Tailwind CSS
  * Bootstrap
  * Material Ui

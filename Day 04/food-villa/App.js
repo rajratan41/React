@@ -1984,7 +1984,7 @@ const Body = () => {
   return (
     <div className="resturant-lists">
       {RestaurantLists.map((restaurant) => {
-        return <ResturantCard {...restaurant.data} />;
+        return <ResturantCard {...restaurant.data} key={restaurant.data.id} />;
       })}
     </div>
   );

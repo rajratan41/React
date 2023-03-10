@@ -1979,6 +1979,13 @@ const ResturantCard = ({
   );
 };
 
+/**
+ * key -
+ * there is no key then use index as a key.
+ * use unique key (best practice).
+ * No KEY is not Acceptable.
+ */
+
 // Body Component
 const Body = () => {
   return (

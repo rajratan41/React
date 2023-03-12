@@ -30,18 +30,16 @@ const Body = () => {
 
   useEffect(() => {
     // API Call
-    console.log("useEffect");
     getResturants();
   }, []);
 
-  console.log("Render"); //-> Called first, before useEffect()
+  // console.log("Render"); //-> Called first, before useEffect()
 
   async function getResturants() {
     const data = await fetch(
       `https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.1196607&lng=85.390982&page_type=DESKTOP_WEB_LISTING`
     );
     const json = await data.json();
-    console.log(json);
 
     // Optional Chaining
     setAllResturants(json?.data?.cards[2]?.data?.data?.cards);

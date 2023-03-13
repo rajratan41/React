@@ -67,3 +67,7 @@
   margin: 20px;
 }
 /* Shimmer Card */
+
+.menu {
+  display: flex;
+}

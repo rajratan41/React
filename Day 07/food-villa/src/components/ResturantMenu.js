@@ -11,11 +11,11 @@ const ResturantMenu = () => {
   //   console.log(parms);
 
   //   or you can direct distructure
-  const { resid } = useParams();
+  const { resId } = useParams();
 
   return (
     <div>
-      <h1>Resturant Id: {resid}</h1>
+      <h1>Resturant Id: {resId}</h1>
       <h1> Pizza Hut </h1>
     </div>
   );

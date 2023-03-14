@@ -24,6 +24,10 @@ class Profile extends React.Component {
   }
 
   async componentDidMount() {
+    this.timer = setInterval(() => {
+      console.log("NAMASTE REACT OP");
+    }, 1000);
+
     // API Call
     const data = await fetch("https://api.github.com/users/rajratan41");
     const json = await data.json();
@@ -41,6 +45,7 @@ class Profile extends React.Component {
   }
 
   componentWillUnmount() {
+    clearInterval(this.timer);
     console.log("componentWillUnmount");
   }
 

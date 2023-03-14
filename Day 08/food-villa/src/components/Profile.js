@@ -14,13 +14,17 @@ const Profile = (props) => {
       console.log("NAMASTE REACT OP");
     }, 1000);
 
+    console.log("useEffect");
+
     // willUnmount in useEffect - when you leave the page it will end
     return () => {
       clearInterval(timer);
+
+      console.log("useEffect Return");
     };
   });
 
-  // console.log("render");
+  console.log("render");
 
   return (
     <div>

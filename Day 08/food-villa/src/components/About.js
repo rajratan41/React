@@ -27,7 +27,7 @@ class About extends Component {
         <p>we are learning how to create path</p>
         {/* <Outlet/>  make route about/profile */}
 
-        <ProfileClassComponent name={"First Child"} xyz={"Abc"} />
+        <ProfileFunctionalComponent name={"First Child"} xyz={"Abc"} />
       </div>
     );
   }

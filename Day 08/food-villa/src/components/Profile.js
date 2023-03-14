@@ -10,8 +10,14 @@ const Profile = (props) => {
   const [count2, setCount2] = useState(0);
 
   useEffect(() => {
-    // API Call
-    // console.log("useEffect");s
+    const timer = setInterval(() => {
+      console.log("NAMASTE REACT OP");
+    }, 1000);
+
+    // willUnmount in useEffect - when you leave the page it will end
+    return () => {
+      clearInterval(timer);
+    };
   });
 
   // console.log("render");

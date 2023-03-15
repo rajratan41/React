@@ -1,21 +1,14 @@
-import { ResturantLists } from "../constants";
-import ResturantCard from "./ResturantCard";
+import { RestaurantLists } from "../constants";
+import RestaurantCard from "./restaurantCard";
 import { useEffect, useState } from "react";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
-
-// Filter Data of Resturant
-function filterData(searchText, resturants) {
-  const filterData = resturants.filter((resturant) =>
-    resturant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-  return filterData;
-}
+import { filterData } from "../utils/helper";
 
 // Body Component
 const Body = () => {
-  const [allResturants, setAllResturants] = useState([]);
-  const [filterdResturants, setFilteredResturants] = useState([]);
+  const [allrestaurants, setAllRestaurants] = useState([]);
+  const [filterdrestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   /**
@@ -31,36 +24,36 @@ const Body = () => {
 
   useEffect(() => {
     // API Call
-    getResturants();
+    getRestaurants();
   }, []);
 
   // console.log("Render"); //-> Called first, before useEffect()
 
-  async function getResturants() {
+  async function getRestaurants() {
     const data = await fetch(
       `https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.1196607&lng=85.390982&page_type=DESKTOP_WEB_LISTING`
     );
     const json = await data.json();
 
     // Optional Chaining
-    setAllResturants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredResturants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
   // Conditional Rendering
-  // if resturant is empty => ShimmerUi
-  // if resturant has data => Actual Ui
+  // if restaurant is empty => ShimmerUi
+  // if restaurant has data => Actual Ui
 
   // not render component (Early Return)
-  if (!allResturants) {
+  if (!allrestaurants) {
     return null;
   }
 
-  // if (filterdResturants?.length === 0) {
-  //   return <h3>No Resturant match your filter !!!</h3>;
+  // if (filterdrestaurants?.length === 0) {
+  //   return <h3>No restaurant match your filter !!!</h3>;
   // }
 
-  return allResturants.length === 0 ? (
+  return allrestaurants.length === 0 ? (
     <ShimmerUi />
   ) : (
     <>
@@ -78,22 +71,22 @@ const Body = () => {
           className="searchbtn"
           onClick={() => {
             // need to filter data
-            const data = filterData(searchText, allResturants);
+            const data = filterData(searchText, allrestaurants);
             // update the state
-            setFilteredResturants(data);
+            setFilteredrestaurants(data);
           }}
         >
           Search
         </button>
       </div>
-      <div className="resturant-lists">
-        {filterdResturants.map((resturant) => {
+      <div className="restaurant-lists">
+        {filterdrestaurants.map((restaurant) => {
           return (
             <Link
-              to={"/resturant/" + resturant.data.id}
-              key={resturant.data.id}
+              to={"/restaurant/" + restaurant.data.id}
+              key={restaurant.data.id}
             >
-              <ResturantCard {...resturant.data} />
+              <RestaurantCard {...restaurant.data} />
             </Link>
           );
         })}

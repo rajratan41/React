@@ -7,8 +7,8 @@ import { filterData } from "../utils/helper";
 
 // Body Component
 const Body = () => {
-  const [allrestaurants, setAllRestaurants] = useState([]);
-  const [filterdrestaurants, setFilteredRestaurants] = useState([]);
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   /**
@@ -45,15 +45,15 @@ const Body = () => {
   // if restaurant has data => Actual Ui
 
   // not render component (Early Return)
-  if (!allrestaurants) {
+  if (!allRestaurants) {
     return null;
   }
 
-  // if (filterdrestaurants?.length === 0) {
+  // if (filteredRestaurants?.length === 0) {
   //   return <h3>No restaurant match your filter !!!</h3>;
   // }
 
-  return allrestaurants.length === 0 ? (
+  return allRestaurants.length === 0 ? (
     <ShimmerUi />
   ) : (
     <>
@@ -71,16 +71,16 @@ const Body = () => {
           className="searchbtn"
           onClick={() => {
             // need to filter data
-            const data = filterData(searchText, allrestaurants);
+            const data = filterData(searchText, allRestaurants);
             // update the state
-            setFilteredrestaurants(data);
+            setFilteredRestaurants(data);
           }}
         >
           Search
         </button>
       </div>
       <div className="restaurant-lists">
-        {filterdrestaurants.map((restaurant) => {
+        {filteredRestaurants.map((restaurant) => {
           return (
             <Link
               to={"/restaurant/" + restaurant.data.id}

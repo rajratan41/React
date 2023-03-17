@@ -18,18 +18,28 @@ const RestaurantMenu = () => {
     <div className="menu">
       <div>
         <h1>restaurant id: {resId}</h1>
-        <h2>{restaurant?.name}</h2>
-        <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
-        <h3>{restaurant?.area}</h3>
-        <h3>{restaurant?.city}</h3>
-        <h3>{restaurant?.avgRating} Stars</h3>
-        <h3>{restaurant?.costForTwoMsg}</h3>
+        <h2>{resturant?.cards[0]?.card?.card?.info?.name}</h2>
+        <img
+          src={
+            IMG_CDN_URL +
+            resturant?.cards[0]?.card?.card?.info?.cloudinaryImageId
+          }
+        />
+        <h3>{resturant?.cards[0]?.card?.card?.info?.locality}</h3>
+        <h3>{resturant?.cards[0]?.card?.card?.info?.city}</h3>
+        <h3>{resturant?.cards[0]?.card?.card?.info?.avgRatingString} Stars</h3>
+        <h3>{resturant?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
       </div>
       <div>
         <h1>Menu</h1>
         <ul>
-          {Object.values(restaurant?.menu?.items).map((item) => {
-            return <li key={item.id}>{item.name}</li>;
+          {Object.values(
+            resturant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
+              ?.card?.card?.itemCards
+          ).map((item) => {
+            return (
+              <li key={items?.card?.info?.id}>{items?.card?.info?.name}</li>
+            );
           })}
         </ul>
       </div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 // Body Component
 const Body = () => {
@@ -40,9 +41,11 @@ const Body = () => {
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
-  // Conditional Rendering
-  // if restaurant is empty => ShimmerUi
-  // if restaurant has data => Actual Ui
+  const isOnline = useOnline();
+
+  if (!isOnline) {
+    return <h1>🔴 Offline, Please Check Your Internet Connection!!</h1>;
+  }
 
   // not render component (Early Return)
   if (!allRestaurants) {

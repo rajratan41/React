@@ -25,12 +25,18 @@ const ResturantMenu = () => {
   //   API Call
   async function getResturantInfo() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=17.385044&lng=78.486671&menuId=" +
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.1196607&lng=85.390982&restaurantId=" +
         resId
     );
     const json = await data.json();
-    console.log(json);
+    console.log(json.data);
     setResturant(json.data);
+    console.log(
+      json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
+        .itemCards[0].card.info
+    );
+    // cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards[0].card.info.name
+    // cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards[0].card.info.name
   }
 
   return !resturant ? (
@@ -39,18 +45,28 @@ const ResturantMenu = () => {
     <div className="menu">
       <div>
         <h1>Resturant id: {resId}</h1>
-        <h2>{resturant?.name}</h2>
-        <img src={IMG_CDN_URL + resturant?.cloudinaryImageId} />
-        <h3>{resturant?.area}</h3>
-        <h3>{resturant?.city}</h3>
-        <h3>{resturant?.avgRating} Stars</h3>
-        <h3>{resturant?.costForTwoMsg}</h3>
+        <h2>{resturant?.cards[0]?.card?.card?.info?.name}</h2>
+        <img
+          src={
+            IMG_CDN_URL +
+            resturant?.cards[0]?.card?.card?.info?.cloudinaryImageId
+          }
+        />
+        <h3>{resturant?.cards[0]?.card?.card?.info?.locality}</h3>
+        <h3>{resturant?.cards[0]?.card?.card?.info?.city}</h3>
+        <h3>{resturant?.cards[0]?.card?.card?.info?.avgRatingString} Stars</h3>
+        <h3>{resturant?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
       </div>
       <div>
         <h1>Menu</h1>
         <ul>
-          {Object.values(resturant?.menu?.items).map((item) => {
-            return <li key={item.id}>{item.name}</li>;
+          {Object.values(
+            resturant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
+              ?.card?.card?.itemCards
+          ).map((items) => {
+            return (
+              <li key={items?.card?.info?.id}>{items?.card?.info?.name}</li>
+            );
           })}
         </ul>
       </div>

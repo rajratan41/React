@@ -43,9 +43,9 @@ const Body = () => {
 
   const isOnline = useOnline();
 
-  if (!isOnline) {
-    return <h1>🔴 Offline, Please Check Your Internet Connection!!</h1>;
-  }
+  // if (!isOnline) {
+  //   return <h1>🔴 Offline, Please Check Your Internet Connection!!</h1>;
+  // }
 
   // not render component (Early Return)
   if (!allRestaurants) {

@@ -14,7 +14,7 @@ const loggedInUser = () => {
 // Logo
 const Title = () => (
   <Link to="/">
-    <img alt="logo" src={Logo} className="logo" />
+    <img className="h-24 rounded-lg" alt="logo" src={Logo} />
   </Link>
 );
 
@@ -24,10 +24,10 @@ const Header = () => {
   const isOnline = useOnline();
 
   return (
-    <div className="header">
+    <div className="flex justify-between items-center p-4 pl-10 pr-10 bg-pink-200 shadow-md font-[Poppins]">
       <Title />
       <div className="nav-items">
-        <ul>
+        <ul className="flex gap-5">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -51,9 +51,19 @@ const Header = () => {
       </div>
       <h1>{isOnline ? "🟢 Online" : "🔴 Offline"}</h1>
       {isLoggedIn ? (
-        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+        <button
+          className="bg-purple-700 rounded-lg pt-2 pb-2 pl-6 pr-6 text-white"
+          onClick={() => setIsLoggedIn(false)}
+        >
+          Logout
+        </button>
       ) : (
-        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+        <button
+          className="bg-purple-700 rounded-lg pt-2 pb-2 pl-6 pr-6 text-white"
+          onClick={() => setIsLoggedIn(true)}
+        >
+          Login
+        </button>
       )}
     </div>
   );

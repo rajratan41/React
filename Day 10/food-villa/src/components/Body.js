@@ -60,10 +60,10 @@ const Body = () => {
     <ShimmerUi />
   ) : (
     <>
-      <div className="search-container">
+      <div className=" flex items-center justify-center pt-8 font-[Poppins] bg-pink-200 ">
         <input
           type="text"
-          className="search-input"
+          className="bg-slate-50 text-black rounded-lg pt-3 pb-3 pl-6 pr-6 w-96"
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
@@ -71,7 +71,7 @@ const Body = () => {
           }}
         />
         <button
-          className="searchbtn"
+          className="bg-purple-700 rounded-lg text-white ml-9 pt-3 pb-3 pl-6 pr-6"
           onClick={() => {
             // need to filter data
             const data = filterData(searchText, allRestaurants);
@@ -82,7 +82,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-lists">
+      <div className="restaurant-lists pt-12 pl-7 pr-7 flex items-center justify-center flex-wrap gap-9 bg-pink-200">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

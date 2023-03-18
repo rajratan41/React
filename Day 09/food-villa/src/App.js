@@ -22,6 +22,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
  */
 
 const Instamart = lazy(() => import("./components/Instamart"));
+
 // Upon on Demand Loading --> upon render --> suspend loading
 
 // About page- lazy load

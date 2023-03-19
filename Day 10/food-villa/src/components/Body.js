@@ -63,7 +63,7 @@ const Body = () => {
       <div className=" flex items-center justify-center pt-8 font-[Poppins] bg-pink-200 ">
         <input
           type="text"
-          className="bg-slate-50 text-black rounded-lg pt-3 pb-3 pl-6 pr-6 w-96"
+          className="bg-slate-100 focus:bg-white text-black rounded-lg pt-3 pb-3 pl-6 pr-6 w-96"
           placeholder="Search"
           value={searchText}
           onChange={(e) => {

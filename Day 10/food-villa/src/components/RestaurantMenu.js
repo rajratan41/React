@@ -16,7 +16,7 @@ const RestaurantMenu = () => {
     <ShimmerUi />
   ) : (
     <div className="flex items-center justify-center bg-pink-200">
-      <div className="flex items-center text-center p-5 bg-white rounded-3xl w-[40rem] shadow-2xl m-6">
+      <div className="flex  text-center p-5 bg-white rounded-3xl w-[40rem] shadow-2xl m-6">
         <div>
           <h1>restaurant id: {resId}</h1>
           <h2 className="font-semibold text-4xl m-5">
@@ -38,7 +38,7 @@ const RestaurantMenu = () => {
           </h3>
           <h3>{restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
         </div>
-        <div className="ml-16 ">
+        <div className="ml-12 p-5">
           <h1 className="font-semibold text-3xl mb-6 ">Menu</h1>
           <ul className="divide-y-2 ">
             {Object.values(

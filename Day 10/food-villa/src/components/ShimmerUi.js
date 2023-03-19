@@ -1,6 +1,6 @@
 const ShimmerUi = () => {
   return (
-    <div className=" pt-12 pl-7 pr-7 mt-20 flex items-center justify-center flex-wrap gap-5">
+    <div className=" pt-12 px-7 mt-20 flex items-center justify-center flex-wrap gap-5">
       {Array(15)
         .fill("")
         .map((e, index) => (

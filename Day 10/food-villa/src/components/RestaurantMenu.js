@@ -15,33 +15,44 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <ShimmerUi />
   ) : (
-    <div className="menu">
-      <div>
-        <h1>restaurant id: {resId}</h1>
-        <h2>{restaurant?.cards[0]?.card?.card?.info?.name}</h2>
-        <img
-          src={
-            IMG_CDN_URL +
-            restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId
-          }
-        />
-        <h3>{restaurant?.cards[0]?.card?.card?.info?.locality}</h3>
-        <h3>{restaurant?.cards[0]?.card?.card?.info?.city}</h3>
-        <h3>{restaurant?.cards[0]?.card?.card?.info?.avgRatingString} Stars</h3>
-        <h3>{restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
-      </div>
-      <div>
-        <h1>Menu</h1>
-        <ul>
-          {Object.values(
-            restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
-              ?.card?.card?.itemCards
-          ).map((items) => {
-            return (
-              <li key={items?.card?.info?.id}>{items?.card?.info?.name}</li>
-            );
-          })}
-        </ul>
+    <div className="flex items-center justify-center bg-pink-200">
+      <div className="flex items-center text-center p-5 bg-white rounded-3xl w-[40rem] shadow-2xl m-6">
+        <div>
+          <h1>restaurant id: {resId}</h1>
+          <h2 className="font-semibold text-4xl m-5">
+            {restaurant?.cards[0]?.card?.card?.info?.name}
+          </h2>
+          <img
+            className="rounded-lg w-80 "
+            src={
+              IMG_CDN_URL +
+              restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId
+            }
+          />
+          <h3 className="mt-5">
+            {restaurant?.cards[0]?.card?.card?.info?.locality}
+          </h3>
+          <h3>{restaurant?.cards[0]?.card?.card?.info?.city}</h3>
+          <h3>
+            {restaurant?.cards[0]?.card?.card?.info?.avgRatingString} Stars
+          </h3>
+          <h3>{restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
+        </div>
+        <div className="ml-16 ">
+          <h1 className="font-semibold text-3xl mb-6 ">Menu</h1>
+          <ul className="divide-y-2 ">
+            {Object.values(
+              restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
+                ?.card?.card?.itemCards
+            ).map((items) => {
+              return (
+                <li className="mt-2" key={items?.card?.info?.id}>
+                  {items?.card?.info?.name}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -52,14 +52,14 @@ const Header = () => {
       <h1>{isOnline ? "🟢 Online" : "🔴 Offline"}</h1>
       {isLoggedIn ? (
         <button
-          className="bg-purple-700 rounded-lg pt-2 pb-2 pl-6 pr-6 text-white"
+          className="bg-purple-700 rounded-lg pt-2 pb-2 pl-6 pr-6 text-white transition ease-out duration-150 hover:scale-90"
           onClick={() => setIsLoggedIn(false)}
         >
           Logout
         </button>
       ) : (
         <button
-          className="bg-purple-700 rounded-lg pt-2 pb-2 pl-6 pr-6 text-white"
+          className="bg-purple-700 rounded-lg pt-2 pb-2 pl-6 pr-6 text-white transition ease-out duration-75 hover:scale-95"
           onClick={() => setIsLoggedIn(true)}
         >
           Login

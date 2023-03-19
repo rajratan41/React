@@ -71,7 +71,7 @@ const Body = () => {
           }}
         />
         <button
-          className="bg-purple-700 rounded-lg text-white ml-9 pt-3 pb-3 pl-6 pr-6"
+          className="bg-purple-700 rounded-lg text-white ml-9 pt-3 pb-3 pl-6 pr-6 transition ease-out duration-75 hover:scale-95"
           onClick={() => {
             // need to filter data
             const data = filterData(searchText, allRestaurants);
@@ -82,7 +82,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-lists pt-12 pl-7 pr-7 flex items-center justify-center flex-wrap gap-9 bg-pink-200">
+      <div className="restaurant-lists pt-12 pl-7 pr-7 flex items-center justify-center flex-wrap gap-5 bg-pink-200">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

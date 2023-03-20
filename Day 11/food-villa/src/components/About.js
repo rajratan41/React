@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import ProfileClassComponent from "./ProfileClass";
 import ProfileFunctionalComponent from "./Profile";
 import { Component } from "react";
+import UserContext from "../utils/UserContext";
 
 // Class based Component
 
@@ -22,9 +23,19 @@ class About extends Component {
     // console.log("Parent - render");
 
     return (
-      <div>
+      <div className="text-center">
         <h2>About us Page 🚀</h2>
         <p>we are learning how to create path</p>
+
+        {/* using Context in Class based Componenet */}
+        <UserContext.Consumer>
+          {({ user }) => (
+            <h1 className="font-bold text-center">
+              {user.name} - {user.email}
+            </h1>
+          )}
+        </UserContext.Consumer>
+
         {/* <Outlet/>  make route about/profile */}
 
         <ProfileFunctionalComponent name={"First Child"} xyz={"Abc"} />

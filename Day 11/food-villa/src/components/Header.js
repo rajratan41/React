@@ -50,7 +50,7 @@ const Header = () => {
         </ul>
       </div>
       <h1>{isOnline ? "🟢 Online" : "🔴 Offline"}</h1>
-      <span className="text-red-900">{user.name}</span>
+      <span className="text-red-900 font-semibold">{user.name}</span>
       {isLoggedIn ? (
         <button
           className="bg-purple-700 rounded-lg py-2 px-6 text-white transition ease-out duration-150 hover:scale-90"

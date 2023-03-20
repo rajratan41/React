@@ -22,12 +22,14 @@ const AppLayout = () => {
   });
 
   return (
-    <UserContext.Provider value={{ user: user }}>
+    <>
       <Header />
-      {/* Outlet */}
-      <Outlet />
-      <Footer />
-    </UserContext.Provider>
+      <UserContext.Provider value={{ user: user }}>
+        {/* Outlet */}
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
+    </>
   );
 };
 

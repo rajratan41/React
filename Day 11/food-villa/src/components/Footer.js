@@ -6,7 +6,7 @@ const Footer = () => {
   const { user } = useContext(UserContext);
 
   return (
-    <div className="flex justify-center items-center font-semibold text-red-900 p-9 bg-pink-200 font-[Poppins]">
+    <div className="flex justify-center items-center font-semibold p-9 bg-pink-200 font-[Poppins]">
       <h3> This site is developed with ❤️ by {user.name} </h3>
     </div>
   );

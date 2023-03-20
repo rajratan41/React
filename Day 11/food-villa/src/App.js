@@ -23,8 +23,8 @@ const AppLayout = () => {
 
   return (
     <>
-      <Header />
       <UserContext.Provider value={{ user: user }}>
+        <Header />
         {/* Outlet */}
         <Outlet />
         <Footer />

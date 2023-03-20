@@ -20,7 +20,7 @@ const RestaurantCard = ({
       <h2 className="font-bold mt-2 text-center">{name}</h2>
       <h5 className="mt-2 text-sm text-center">{cuisines.join(", ")}</h5>
       <h3 className="mt-2 text-sm text-center">{totalRatingsString}</h3>
-      <h5 className="font-semibold text-red-900">
+      <h5 className="font-semibold">
         {user.name} - {user.email}
       </h5>
     </div>

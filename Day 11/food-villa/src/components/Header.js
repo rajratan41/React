@@ -1,15 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import Logo from "../assets/img/foodVilla.png";
+import UserContext from "../utils/UserContext";
 
 const loggedInUser = () => {
   // API call to check Authentication
   return false;
 };
-
-// Single Page Application (SPA) ?
-// client side Routing
 
 // Logo
 const Title = () => (
@@ -22,6 +20,8 @@ const Title = () => (
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useOnline();
+
+  const { user } = useContext(UserContext);
 
   return (
     <div className="flex flex-wrap justify-between items-center p-4 pl-10 pr-10 bg-pink-200 shadow-md font-[Poppins]">
@@ -50,6 +50,7 @@ const Header = () => {
         </ul>
       </div>
       <h1>{isOnline ? "🟢 Online" : "🔴 Offline"}</h1>
+      <span className="text-red-900">{user.name}</span>
       {isLoggedIn ? (
         <button
           className="bg-purple-700 rounded-lg py-2 px-6 text-white transition ease-out duration-150 hover:scale-90"

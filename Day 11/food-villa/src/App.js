@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,33 +9,25 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import ShimmerUi from "./components/ShimmerUi";
+import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-/** This all will do samething
- * Chunking
- * Code Splitting
- * Dynamic Bundling
- * Lazy Loading
- * On Demand Loading
- * Dynamic Import
- *
- */
-
 const Instamart = lazy(() => import("./components/Instamart"));
-
-// Upon on Demand Loading --> upon render --> suspend loading
-
-// About page- lazy load
 const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "Raj Ratan",
+    email: "rajratan@gmail.com",
+  });
+
   return (
-    <>
+    <UserContext.Provider value={{ user: user }}>
       <Header />
       {/* Outlet */}
       <Outlet />
       <Footer />
-    </>
+    </UserContext.Provider>
   );
 };
 

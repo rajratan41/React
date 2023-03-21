@@ -1,10 +1,18 @@
-import { RestaurantLists } from "../constants";
+import { useEffect, useState, useContext } from "react";
+
+// Component
 import RestaurantCard from "./restaurantCard";
-import { useEffect, useState } from "react";
 import ShimmerUi from "./ShimmerUi";
+
 import { Link } from "react-router-dom";
+
+// Helper
 import { filterData } from "../utils/helper";
+
+// Custom Hook
 import useOnline from "../utils/useOnline";
+
+import UserContext from "../utils/UserContext";
 
 // Body Component
 const Body = () => {
@@ -12,16 +20,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  /**
-   * 1) useEffect() with empty dep array
-   *    Called once after render
-   *
-   * 2) useEffect() with dep array [searchText]
-   *    Once after render + Called everytime after render "searchText" changes
-   *
-   * 3) useEffect() with dep array [restaurants]
-   *    Once after render + Called everytime restaurants changes that is on click of "Search" button
-   */
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     // API Call
@@ -81,6 +80,34 @@ const Body = () => {
         >
           Search
         </button>
+
+        {/* To change Context */}
+        <input
+          className="py-3 px-6 m-2"
+          type="text"
+          placeholder="Context Name"
+          value={user.name}
+          onChange={(e) =>
+            setUser({
+              ...user,
+              name: e.target.value,
+            })
+          }
+        ></input>
+
+        <input
+          className="py-3 px-6 m-2"
+          type="email"
+          placeholder="Context Email"
+          value={user.email}
+          onChange={(e) =>
+            setUser({
+              ...user,
+              email: e.target.value,
+            })
+          }
+        ></input>
+        {/* To change Context */}
       </div>
       <div className="restaurant-lists pt-12 pl-7 pr-7 flex items-center justify-center flex-wrap gap-5 bg-pink-200">
         {filteredRestaurants.map((restaurant) => {

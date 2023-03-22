@@ -28,6 +28,7 @@ const Header = () => {
 
   // subscribing to store -> store.cart.items
   const cartItem = useSelector((store) => store.cart.items);
+  console.log(cartItem);
 
   return (
     <div className="flex flex-wrap justify-between items-center p-4 pl-10 pr-10 bg-pink-200 shadow-md font-[Poppins]">
@@ -51,7 +52,7 @@ const Header = () => {
           </li>
 
           <li>
-            <Link to="cart">Cart - ({cartItem.length} items)</Link>
+            <Link to="/cart">Cart - ({cartItem.length} items)</Link>
           </li>
         </ul>
       </div>

@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
+import Cart from "./components/Cart";
 import ShimmerUi from "./components/ShimmerUi";
 import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -78,6 +79,10 @@ const appRouter = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

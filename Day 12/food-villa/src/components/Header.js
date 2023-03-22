@@ -4,6 +4,9 @@ import useOnline from "../utils/useOnline";
 import Logo from "../assets/img/foodVilla.png";
 import UserContext from "../utils/UserContext";
 
+// For subscribing to store
+import { useSelector } from "react-redux";
+
 const loggedInUser = () => {
   // API call to check Authentication
   return false;
@@ -22,6 +25,9 @@ const Header = () => {
   const isOnline = useOnline();
 
   const { user } = useContext(UserContext);
+
+  // subscribing to store -> store.cart.items
+  const cartItem = useSelector((store) => store.cart.items);
 
   return (
     <div className="flex flex-wrap justify-between items-center p-4 pl-10 pr-10 bg-pink-200 shadow-md font-[Poppins]">
@@ -45,7 +51,7 @@ const Header = () => {
           </li>
 
           <li>
-            <Link to="cart">Cart</Link>
+            <Link to="cart">Cart - ({cartItem.length} items)</Link>
           </li>
         </ul>
       </div>

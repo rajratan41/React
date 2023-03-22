@@ -12,6 +12,12 @@ import ShimmerUi from "./components/ShimmerUi";
 import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
+// Redux
+import { Provider } from "react-redux";
+
+// Redux Store
+import store from "./utils/store";
+
 const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
 
@@ -22,14 +28,14 @@ const AppLayout = () => {
   });
 
   return (
-    <>
+    <Provider store={store}>
       <UserContext.Provider value={{ user: user, setUser: setUser }}>
         <Header />
         {/* Outlet */}
         <Outlet />
         <Footer />
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 

@@ -80,7 +80,7 @@ export default store;
           export default cartSlice.reducer;
 
 * =====================================================================================
-  Now we come back to store and created the cart slice in our store
+  Now we come back to store and Put Slices  in our store
   =====================================================================================
    - Inside store.js
  *          - import {configureStore} from "@reduxjs/toolkit"
